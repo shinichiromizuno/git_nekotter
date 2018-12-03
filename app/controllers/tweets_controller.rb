@@ -10,6 +10,10 @@ class TweetsController < ApplicationController
     Tweet.create(tweet_params)
   end
   
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+  
   def tweet_params
     params.permit(:text)
   end
